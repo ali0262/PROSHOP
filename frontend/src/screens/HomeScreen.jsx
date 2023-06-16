@@ -1,9 +1,28 @@
-import React from "react";
-import products from "../products";
+import {useState,useEffect} from "react";
+
 import Product from "../components/Product";
 import { Col, Container, Row } from "react-bootstrap";
 
+import axios from 'axios';
+
 const HomeScreen = () => {
+
+  const [products, setProducts] = useState([])
+
+
+  const fetchProducts = async ()=>{
+    try {
+      const {data} = await axios.get('/api/products');
+     setProducts(data)
+    } catch (error) {
+      
+    }
+  }
+
+  useEffect(()=>{
+      fetchProducts()
+  },[])
+
   return (
     <main className="py-3">
       <Container>

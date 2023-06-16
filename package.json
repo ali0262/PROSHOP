@@ -1,0 +1,27 @@
+{
+  "name": "proshop",
+  "version": "1.0.0",
+  "description": "mern shopping cart app",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node ./backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm run dev --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [],
+  "author": "ali",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.2.0",
+    "express": "^4.18.2",
+    "mongoose": "^7.3.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "nodemon": "^2.0.22"
+  }
+}
